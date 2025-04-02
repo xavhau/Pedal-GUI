@@ -463,7 +463,7 @@ class BoardWindow(QWidget):
 
         if key == Qt.Key_R:
             self.rcount += 1
-            if self.rcount >= 6:
+            if self.rcount >= 4:
                 quitModHost(self.mod_host_manager)
                 self.restart_callback()
         else:
