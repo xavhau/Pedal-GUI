@@ -30,13 +30,17 @@ def startModHost():
 
 def startJackdServer():
     try:
-        mod_host_cmd = ["qjackctl"] #Starting jackd
+        jackd_cmd = ["/usr/bin/jackd", "-dalsa -dhw:sndrpihifiberry", "-r96000", "-p128", "-n2", "&"] #Starting jackd
 
         if sys.platform.startswith("linux"):
-            process = subprocess.Popen(mod_host_cmd,
-                                       stdout=subprocess.PIPE,
+            try:
+                
+                process = subprocess.Popen(jackd_cmd,
+                                    stdout=subprocess.PIPE,
                                        stderr=subprocess.PIPE,
                                          preexec_fn=os.setpgrp)
+            except Exception as e:
+                print(e)
         else:
             print("Unsupported OS")
             return None
