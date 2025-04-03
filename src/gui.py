@@ -780,7 +780,7 @@ def main():
     startJackdServer()
     time.sleep(.1)
     main_window = MainWindow()
-    main_window.show()
+    main_window.showFullScreen()
     sys.exit(app.exec_())
 
 if __name__ == "__main__":
