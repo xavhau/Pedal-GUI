@@ -30,20 +30,24 @@ def startModHost():
 
 def startJackdServer():
     try:
-        jackd_cmd = ["/usr/bin/jackd", "-dalsa -dhw:sndrpihifiberry", "-r96000", "-p128", "-n2", "&"] #Starting jackd
+        jackd_cmd = ["/usr/bin/jackd", "-d", "alsa", "-d", "hw:sndrpihifiberry", "-r", "96000", "-p", "128", "-n", "2"]
 
         if sys.platform.startswith("linux"):
             try:
-                
-                process = subprocess.Popen(jackd_cmd,
-                                    stdout=subprocess.PIPE,
-                                       stderr=subprocess.PIPE,
-                                         preexec_fn=os.setpgrp)
+                process = subprocess.Popen(
+                    jackd_cmd,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    preexec_fn=os.setpgrp,  # Makes it independent of the parent process
+                )
+                print("JACK server started successfully.")
             except Exception as e:
-                print(e)
+                print(f"Error starting JACK server: {e}")
+                return None
         else:
             print("Unsupported OS")
             return None
+        
         return process
     
     except Exception as e:

@@ -463,7 +463,8 @@ class BoardWindow(QWidget):
 
         if key == Qt.Key_R:
             self.rcount += 1
-            if self.rcount >= 4:
+            if self.rcount >= 7:
+                self.rcount = 0
                 quitModHost(self.mod_host_manager)
                 self.restart_callback()
         else:
@@ -781,10 +782,6 @@ def main():
     main_window = MainWindow()
     main_window.show()
     sys.exit(app.exec_())
-
-    
-
-    
 
 if __name__ == "__main__":
     main()
