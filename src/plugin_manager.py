@@ -19,6 +19,18 @@ class Parameter():
     def setValue(self, value: float):
         self.value = value
     
+    def to_dict(self):
+        return {
+            "type": self.type,
+            "name": self.name,
+            "symbol": self.symbol,
+            "mode": self.mode,
+            "value": self.value,
+            "min": self.minimum,
+            "max": self.max,
+            "increment": self.increment
+        }
+    
     
 
 class Plugin():
@@ -34,6 +46,17 @@ class Plugin():
     
     def add_parameter(self,parameter: Parameter):
         self.parameters.append(parameter)
+    
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "uri": self.uri,
+            "bypass": self.bypass,
+            "channels": self.channels,
+            "inputs": self.inputs,
+            "outputs": self.outputs,
+            "parameters": [param.to_dict() for param in self.parameters]
+        }
 
 class PluginManager:
     def __init__(self, plugins: list = None):
@@ -139,4 +162,9 @@ class PluginManager:
             return -1
         except ValueError as e:
             print(f"JSON Error: {e}")
+    
+    def to_dict(self):
+        return {
+            "plugins": [plugin.to_dict() for plugin in self.plugins]
+        }
     

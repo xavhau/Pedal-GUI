@@ -71,40 +71,6 @@
             ]
         },
         {
-            "name" : "FUZZ",
-            "uri" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/FuzzPlugin",
-            "bypass" : 0,
-            "channels" : "stereo",
-            "inputs" : [
-                "audio_in_1",
-                "audio_in_2"
-            ],
-            "outputs" : [
-                "audio_out_1",
-                "audio_out_2"
-            ],
-            "parameters" : [
-                {
-                    "type" : "plug",
-                    "name" : "Gain",
-                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/FuzzPlugin:gain",
-                    "mode" : "dial",
-                    "default" : 0.5,
-                    "min" : 0,
-                    "max" : 3
-                },
-                {
-                    "type" : "plug",
-                    "name" : "Clip",
-                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/FuzzPlugin:clip",
-                    "mode" : "dial",
-                    "default" : 0.5,
-                    "min" : 0,
-                    "max" : 3
-                }
-            ]
-        },
-        {
             "name" : "Distortion",
             "uri" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/UniqueDistortionPlugin",
             "bypass" : 0,
@@ -129,48 +95,12 @@
                 },
                 {
                     "type" : "plug",
-                    "name" : "Mode",
-                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/UniqueDistortionPlugin:mode",
-                    "mode" : "selector",
-                    "default" : 0,
-                    "min" : 0,
-                    "max" : 5
-                },
-                {
-                    "type" : "plug",
-                    "name" : "LowThres",
-                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/UniqueDistortionPlugin:lowthres2",
+                    "name" : "Intensity",
+                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/UniqueDistortionPlugin:di",
                     "mode" : "dial",
-                    "default" : 0.5,
-                    "min" : 0.5,
-                    "max" : 9
-                },
-                {
-                    "type" : "plug",
-                    "name" : "HighThres",
-                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/UniqueDistortionPlugin:highthres2",
-                    "mode" : "dial",
-                    "default" : 0.5,
-                    "min" : 0.5,
-                    "max" : 9
-                },
-                {
-                    "type" : "plug",
-                    "name" : "Bits",
-                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/UniqueDistortionPlugin:nbit5",
-                    "mode" : "selector",
-                    "default" : 4,
-                    "min" : 1,
-                    "max" : 128
-                },
-                {
-                    "type" : "plug",
-                    "name" : "PercentDrop",
-                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/UniqueDistortionPlugin:percentDrop4",
-                    "mode" : "dial",
-                    "default" : 0.5,
-                    "min" : 0,
-                    "max" : 10
+                    "default" : 30,
+                    "min" : 5,
+                    "max" : 50
                 }
                 
             ]
@@ -205,7 +135,7 @@
                     "mode" : "dial",
                     "default" : 2,
                     "min" : 0,
-                    "max" : 20
+                    "max" : 10
                 },
                 {
                     "type" : "plug",
@@ -215,6 +145,15 @@
                     "default" : 0.2,
                     "min" : 0,
                     "max" : 1
+                },
+                {
+                    "type" : "plug",
+                    "name" : "Waveform",
+                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/TremoloPlugin:waveform",
+                    "mode" : "selector",
+                    "default" : 1,
+                    "min" : 0,
+                    "max" : 4
                 }
             ]
         },
@@ -270,21 +209,21 @@
                 },
                 {
                     "type" : "plug",
-                    "name" : "Feedback",
-                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/ChorusPlugin:feedback",
-                    "mode" : "dial",
-                    "default" : 0.2,
-                    "min" : 0,
-                    "max" : 1
-                },
-                {
-                    "type" : "plug",
                     "name" : "Mix",
                     "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/ChorusPlugin:mix",
                     "mode" : "dial",
                     "default" : 0.5,
                     "min" : 0,
                     "max" : 1
+                },
+                {
+                    "type" : "plug",
+                    "name" : "Waveform",
+                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/ChorusPlugin:waveform",
+                    "mode" : "selector",
+                    "default" : 1,
+                    "min" : 0,
+                    "max" : 4
                 }
             ]
         },
@@ -325,7 +264,7 @@
                     "name" : "Depth",
                     "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/FlangerPlugin:depth",
                     "mode" : "dial",
-                    "default" : 0.5,
+                    "default" : 0.9,
                     "min" : 0,
                     "max" : 1
                 },
@@ -355,7 +294,87 @@
                     "default" : 0.5,
                     "min" : 0,
                     "max" : 1
+                },
+                {
+                    "type" : "plug",
+                    "name" : "Waveform",
+                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/FlangerPlugin:waveform",
+                    "mode" : "selector",
+                    "default" : 1,
+                    "min" : 0,
+                    "max" : 4
+                },
+                {
+                    "type" : "plug",
+                    "name" : "Mode",
+                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/FlangerPlugin:flangeMode",
+                    "mode" : "dial",
+                    "default" : 1,
+                    "min" : 0,
+                    "max" : 3
                 }
+            ]
+        },
+        {
+            "name" : "Phaser",
+            "uri" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/PhaserPlugin",
+            "bypass" : 0,
+            "channels" : "stereo",
+            "inputs" : [
+                "audio_in_1",
+                "audio_in_2"
+            ],
+            "outputs" : [
+                "audio_out_1",
+                "audio_out_2"
+            ],
+            "parameters" : [
+                {
+                    "type" : "plug",
+                    "name" : "Rate",
+                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/PhaserPlugin:rate",
+                    "mode" : "dial",
+                    "default" : 0.5,
+                    "min" : 0,
+                    "max" : 25
+                },
+                {
+                    "type" : "plug",
+                    "name" : "Depth",
+                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/PhaserPlugin:depth",
+                    "mode" : "dial",
+                    "default" : 0.5,
+                    "min" : 0.01,
+                    "max" : 0.99
+                },
+                {
+                    "type" : "plug",
+                    "name" : "Center Freq",
+                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/PhaserPlugin:centreFreq",
+                    "mode" : "dial",
+                    "default" : 100,
+                    "min" : 0,
+                    "max" : 600
+                },
+                {
+                    "type" : "plug",
+                    "name" : "Feedback",
+                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/PhaserPlugin:feedback",
+                    "mode" : "dial",
+                    "default" : 0,
+                    "min" : -0.99,
+                    "max" : 0.99
+                },
+                {
+                    "type" : "plug",
+                    "name" : "mix",
+                    "symbol" : "https://github.com/AnnaAndres28/PedalboardPlugins/tree/main/PhaserPlugin:mix",
+                    "mode" : "dial",
+                    "default" : 0.5,
+                    "min" : 0,
+                    "max" : 1
+                }
+                
             ]
         }
     ]
